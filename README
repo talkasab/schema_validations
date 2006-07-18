@@ -1,0 +1,15 @@
+Schema Validations
+==================
+
+Schema Validations is a plugin that reads various constraints defined against
+columns in your database and applies the closest matching rails validation.
+
+Currently the plugin supports the following constraints:
+
+  NOT NULL is converted to validates_presence_of
+
+lICENSE
+=======
+
+This plugin is copyright 2006 by RedHill Consulting, Pty. Ltd. and is released
+under the MIT license.
