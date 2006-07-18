@@ -3,3 +3,7 @@
 [NEW] Initial version.
 
 [FIXED] Ignore columns ending in: _id, _count, _at, _on.
+
+[NEW] Support validates_numericality_of for numbers (including :integer => true)
+
+[NEW] Support validates_length_of for strings
