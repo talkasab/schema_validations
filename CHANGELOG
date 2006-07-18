@@ -1,3 +1,5 @@
 [REVISION 20060717]
 
 [NEW] Initial version.
+
+[FIXED] Ignore columns ending in: _id, _count, _at, _on.
