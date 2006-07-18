@@ -8,7 +8,7 @@ Currently the plugin supports the following constraints:
 
   NOT NULL is converted to validates_presence_of
   Numbers are checked using validates_numericality_of (including :integer => true)
-  Strings lengths are checked using validates_length_of
+  String lengths are checked using validates_length_of
 
 lICENSE
 =======
