@@ -1,3 +1,7 @@
+[REVISION 20060719]
+
+[NEW] Support validates_presence_of for belongs_to associations.
+
 [REVISION 20060718]
 
 [FIXED] String test checks #class instead of #klass

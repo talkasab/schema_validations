@@ -6,7 +6,7 @@ columns in your database and applies the closest matching rails validation.
 
 Currently the plugin supports the following constraints:
 
-  NOT NULL is converted to validates_presence_of
+  NOT NULL is converted to validates_presence_of (including belongs_to associations)
   Numbers are checked using validates_numericality_of (including :integer => true)
   String lengths are checked using validates_length_of
 
