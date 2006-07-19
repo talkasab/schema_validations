@@ -4,6 +4,8 @@
 
 [CHANGED] Separated out check for null from validation of numericality. This means you'll get a "xxx can't be blank" rather than an "xx isn't a number" which seems more intuitive to me.
 
+[FIXED] Default check should consider nil explicitly to allow for false.
+
 [REVISION 20060717]
 
 [NEW] Initial version.
