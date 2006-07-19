@@ -1,3 +1,9 @@
+[REVISION 20060718]
+
+[FIXED] String test checks #class instead of #klass
+
+[CHANGED] Separated out check for null from validation of numericality. This means you'll get a "xxx can't be blank" rather than an "xx isn't a number" which seems more intuitive to me.
+
 [REVISION 20060717]
 
 [NEW] Initial version.
