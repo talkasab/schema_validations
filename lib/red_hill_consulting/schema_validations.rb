@@ -12,7 +12,7 @@ module RedHillConsulting
             child.validates_length_of column.name, :allow_nil => true, :maximum => column.limit
           end
 
-          child.validates_presence_of column.name unless column.null || !column.default.nil?
+          child.validates_presence_of column.name if !column.null && column.default.nil?
         end
       end
     end
