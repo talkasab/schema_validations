@@ -1,3 +1,7 @@
+[REVISION 20060723]
+
+[FIXED] Workaround for a "feature" of the way validates_presence_of handles boolean fields. See http://dev.rubyonrails.org/ticket/5090 and http://dev.rubyonrails.org/ticket/3334
+
 [REVISION 20060719]
 
 [NEW] Support validates_presence_of for belongs_to associations.
