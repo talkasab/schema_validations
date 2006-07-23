@@ -28,7 +28,7 @@ module RedHillConsulting
             # Work-around for a "feature" of the way validates_presence_of handles boolean fields
             # See http://dev.rubyonrails.org/ticket/5090 and http://dev.rubyonrails.org/ticket/3334
             if column.type == :boolean
-              validates_inclusion_of column.name, :in => [true, false]
+              child.validates_inclusion_of column.name, :in => [true, false]
             else
               child.validates_presence_of column.name
             end
