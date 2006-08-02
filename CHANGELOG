@@ -1,3 +1,9 @@
+[REVISION 20060802]
+
+[NEW] Support for validates_uniqueness_of for single-column unique indexes.
+
+[CHANGED] Error message for boolean fields to be the same as the default for validates_presence_of
+
 [REVISION 20060723]
 
 [FIXED] Workaround for a "feature" of the way validates_presence_of handles boolean fields. See http://dev.rubyonrails.org/ticket/5090 and http://dev.rubyonrails.org/ticket/3334
