@@ -1,3 +1,7 @@
+[REVISION 20060803]
+
+[FIXED] Revision 50 comments out the validates_presence_of magic on line 13 in belongs_to_with_schema_validations.
+
 [REVISION 20060802]
 
 [NEW] Support for validates_uniqueness_of for single-column unique indexes.
