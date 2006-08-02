@@ -10,7 +10,7 @@ module RedHillConsulting
 
       def belongs_to_with_schema_validations(association_id, options = {})
         belongs_to_without_schema_validations(association_id, options)
-        # validates_presence_of association_id unless columns_hash[reflections[association_id.to_sym].primary_key_name.to_s].null
+        validates_presence_of association_id unless columns_hash[reflections[association_id.to_sym].primary_key_name.to_s].null
       end
 
       def inherited(child)
