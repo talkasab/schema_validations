@@ -1,3 +1,7 @@
+[REVISION 20060812]
+
+[FIXED] Documentation mentions :integer => true options; this should have read :only_integer => true.
+
 [REVISION 20060803]
 
 [FIXED] Revision 50 comments out the validates_presence_of magic on line 13 in belongs_to_with_schema_validations.
