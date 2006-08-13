@@ -1,5 +1,9 @@
 [REVISION 20060812]
 
+[CHANGED] Documentation updated to reflect the fact that no further action is required once the plugin is installed.
+
+[REVISION 20060812]
+
 [FIXED] Documentation mentions :integer => true options; this should have read :only_integer => true.
 
 [REVISION 20060803]
