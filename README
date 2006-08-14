@@ -3,6 +3,7 @@ Schema Validations
 
 Schema Validations is a plugin that reads various constraints defined against
 columns in your database and applies the closest matching rails validation.
+(Ala Dave Thomas' Keynote.)
 
 Over and above installing the plugin, no further action is required for the
 validations to take effect; the database schema constraints will be read and
