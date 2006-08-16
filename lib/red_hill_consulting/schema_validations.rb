@@ -17,7 +17,7 @@ module RedHillConsulting
         super
         
         # NOT NULL constraints
-        child.content_columns.reject { |column| column.name =~ /(_at|_on)$/ }.each do |column|
+        child.content_columns.reject { |column| column.name =~ /(created|updated)(_at|_on)$/ }.each do |column|
           if column.name == "position"
             next
           elsif column.type == :integer

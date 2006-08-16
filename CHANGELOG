@@ -1,3 +1,7 @@
+[REVISION 20060816]
+
+[FIXED] Overly greedy regex ignoring all date/time columns.
+
 [REVISION 20060812]
 
 [CHANGED] Documentation updated to reflect the fact that no further action is required once the plugin is installed.
