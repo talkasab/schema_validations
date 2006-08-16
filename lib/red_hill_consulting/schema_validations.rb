@@ -17,10 +17,8 @@ module RedHillConsulting
         super
         
         # NOT NULL constraints
-        child.content_columns.reject { |column| column.name =~ /(created|updated)(_at|_on)$/ }.each do |column|
-          if column.name == "position"
-            next
-          elsif column.type == :integer
+        child.content_columns.reject { |column| column.name =~ /^(((created|updated)(_at|_on))|position)$/ }.each do |column|
+          if column.type == :integer
             child.validates_numericality_of column.name, :allow_nil => true, :only_integer => true
           elsif column.number?
             child.validates_numericality_of column.name, :allow_nil => true
