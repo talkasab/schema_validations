@@ -15,6 +15,9 @@ module RedHillConsulting
 
       def inherited(child)
         super
+
+        # Don't even bother if the table doesn't yet exist
+        return unless child.table_exists?
         
         # NOT NULL constraints
         child.content_columns.reject { |column| column.name =~ /^(((created|updated)_(at|on))|position)$/ }.each do |column|

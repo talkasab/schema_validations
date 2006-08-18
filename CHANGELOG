@@ -1,3 +1,9 @@
+[REVISION 20060818]
+
+[FIXED] 'Before updating scaffolding from new DB schema, try creating a table for your model (<model>)' when running ./script/generate scaffold <model>.
+
+[FIXED] relation "system_settings" does not exist when running a migrate with system_settings plugin installed.
+
 [REVISION 20060816]
 
 [FIXED] Overly greedy regex ignoring all date/time columns.
