@@ -1,5 +1,4 @@
-Schema Validations
-==================
+= Schema Validations
 
 Schema Validations is a plugin that reads various constraints defined against
 columns in your database and applies the closest matching rails validation.
@@ -7,18 +6,17 @@ columns in your database and applies the closest matching rails validation.
 
 Over and above installing the plugin, no further action is required for the
 validations to take effect; the database schema constraints will be read and
-applied as validations when your ActiveRecord model classes are loaded. Just
+applied as validations when your ActiveRecord model classes are loaded; just
 like magic.
 
-Currently the plugin supports the following constraints:
+The plugin supports the following constraints:
 
-  NOT NULL is converted to validates_presence_of (including belongs_to associations)
-  Numbers are checked using validates_numericality_of (including :only_integer => true)
-  String lengths are checked using validates_length_of
-  Single-column unique indexes are converted to validates_uniqueness_of
+* <code>NOT NULL</code> is converted to +validates_presence_of+ (including +belongs_to+ associations);
+* Numbers are checked using +validates_numericality_of+ (including <code>:only_integer => true</code>);
+* String lengths are checked using +validates_length_of+; and
+* Single-column unique indexes are converted to +validates_uniqueness_of+.
 
-lICENSE
-=======
+= License
 
 This plugin is copyright 2006 by RedHill Consulting, Pty. Ltd. and is released
 under the MIT license.
