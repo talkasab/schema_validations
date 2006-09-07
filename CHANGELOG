@@ -1,3 +1,7 @@
+[REVISION 20060908]
+
+[FIXED] validates_presence_of not being applied under MySQL; empty defaults are represented as blank rather than nil.
+
 [REVISION 20060818]
 
 [FIXED] 'Before updating scaffolding from new DB schema, try creating a table for your model (<model>)' when running ./script/generate scaffold <model>.
