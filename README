@@ -16,6 +16,10 @@ The plugin supports the following constraints:
 * String lengths are checked using +validates_length_of+; and
 * Single-column unique indexes are converted to +validates_uniqueness_of+.
 
+=== Dependencies
+
+* RedHill on Rails Core (redhillonrails_core).
+
 === License
 
 This plugin is copyright 2006 by RedHill Consulting, Pty. Ltd. and is released

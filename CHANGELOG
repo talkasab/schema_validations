@@ -1,6 +1,16 @@
+[REVISION 20060909]
+
+[NEW] Dependency on RedHill on Rails Core.
+
+[NEW] validates_uniqueness_of for associations.
+
+[FIXED] validates_presence_of for associations.
+
 [REVISION 20060908]
 
 [FIXED] validates_presence_of not being applied under MySQL; empty defaults are represented as blank rather than nil.
+
+[NEW] validates_uniqueness_of for associations.
 
 [REVISION 20060818]
 
