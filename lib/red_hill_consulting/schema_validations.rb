@@ -17,7 +17,7 @@ module RedHillConsulting
             child.validates_length_of column.name, :allow_nil => true, :maximum => column.limit
           end
 
-          if !column.null && column.default.blank?
+          if !column.null && column.default.nil?
             # Work-around for a "feature" of the way validates_presence_of handles boolean fields
             # See http://dev.rubyonrails.org/ticket/5090 and http://dev.rubyonrails.org/ticket/3334
             if column.type == :boolean

@@ -1,3 +1,7 @@
+[REVISION 20060911]
+
+[CHANGED] Revert to nil defaults--as opposed to blank--now that the MySQL behaviour has been patched in redhillonrails_core.
+
 [REVISION 20060909]
 
 [NEW] Dependency on RedHill on Rails Core.
