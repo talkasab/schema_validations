@@ -5,7 +5,7 @@ module RedHillConsulting
         super
 
         # Don't even bother if the table doesn't yet exist
-        return unless child.table_exists?
+         return if child.name.blank? || !child.table_exists?
 
         # NOT NULL constraints
         child.columns.reject { |column| column.primary || column.name =~ /(^(((created|updated)_(at|on))|position)|_count)$/ }.each do |column|
