@@ -1,3 +1,7 @@
+[REVISION 20060913]
+
+[FIXED] validates_presence_of for associations causes new records to fail.
+
 [REVISION 20060912]
 
 [FIXED] 'Before updating scaffolding from new DB schema, try creating a table for your model (<model>)' when running ./script/generate scaffold <model>. Seems the scaffold sandbox dynamically creates classes which have no name.
