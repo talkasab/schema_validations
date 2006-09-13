@@ -1,3 +1,7 @@
+[REVISION 20060914]
+
+[CHANGED] Removed unnecessary condition from validates_presence_of for associations.
+
 [REVISION 20060913]
 
 [FIXED] validates_presence_of for associations causes new records to fail.

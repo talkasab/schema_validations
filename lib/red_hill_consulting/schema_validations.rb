@@ -15,7 +15,7 @@ module RedHillConsulting
 
         # NOT NULL constraints
         module_eval(
-          "validates_presence_of column.name, :if => lambda { |record| record.#{association_id}.nil? || !record.#{association_id}.new_record? }"
+          "validates_presence_of column.name, :if => lambda { |record| record.#{association_id}.nil? }"
         ) if column.required
 
         # UNIQUE constraints
