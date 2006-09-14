@@ -13,8 +13,8 @@ The plugin supports the following constraints:
 
 * <code>NOT NULL</code> is converted to +validates_presence_of+ (including +belongs_to+ associations);
 * Numbers are checked using +validates_numericality_of+ (including <code>:only_integer => true</code>);
-* String lengths are checked using +validates_length_of+; and
-* Single-column unique indexes are converted to +validates_uniqueness_of+.
+* String lengths are checked using +validates_length_of+;
+* Single-column unique indexes are converted to +validates_uniqueness_of+; and
 * Multi-column unique indexes are converted to +validates_uniqueness_of+ with +scope+.
 
 For multi-column unique indexes the column validated for uniqueness is either the last column not ending in '_id' or simply the last column. This follows the typical composite unique index column ordering where the scoping is specified first but will attempt to find the last non-foreign-key column just-in-case. Eg, both <code>add_index :states, [:country_id, :name]</code> and <code>add_index :states, [:name, :country_id]</code> would result in <code>validates_uniqueness_of :name, :scope => [:country_id]</code>.
