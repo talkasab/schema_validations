@@ -17,7 +17,9 @@ The plugin supports the following constraints:
 * Single-column unique indexes are converted to +validates_uniqueness_of+; and
 * Multi-column unique indexes are converted to +validates_uniqueness_of+ with +scope+.
 
-For multi-column unique indexes the column validated for uniqueness is either the last column not ending in '_id' or simply the last column. This follows the typical composite unique index column ordering where the scoping is specified first but will attempt to find the last non-foreign-key column just-in-case. Eg, either of the following two statements in a schema migration script:
+For multi-column unique indexes the column validated for uniqueness is either the last column not ending in '_id' or simply the last column. This follows the typical composite unique index column ordering where the scoping is specified first but will attempt to find the last non-foreign-key column just-in-case.
+
+For example, either of the following two statements in a schema migration script:
 
   add_index :states, [:country_id, :name], :unique => true
   add_index :states, [:name, :country_id], :unique => true
