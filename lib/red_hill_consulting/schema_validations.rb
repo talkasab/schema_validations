@@ -50,7 +50,7 @@ module RedHillConsulting
           end
 
           # UNIQUE constraints
-          child.validates_uniqueness_of column.name, :scope => column.unique_scope if column.unique
+          child.validates_uniqueness_of column.name, :scope => column.unique_scope, :allow_nil => true if column.unique
         end
       end
     end
