@@ -19,7 +19,7 @@ module RedHillConsulting
         ) if column.required
 
         # UNIQUE constraints
-        validates_uniqueness_of column.name, :scope => column.unique_scope if column.unique
+        validates_uniqueness_of column.name, :scope => column.unique_scope, :allow_nil => true if column.unique
       end
 
       def inherited(child)
