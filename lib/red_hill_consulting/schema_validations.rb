@@ -26,7 +26,7 @@ module RedHillConsulting
         super
 
         # Don't even bother if the table doesn't yet exist
-        return if child.name.blank? || !child.table_exists?
+        return if !child.concrete_class?
 
         child.content_columns.reject { |column| column.name =~ /^(((created|updated)_(at|on))|position)$/ }.each do |column|
           # Data-type validation

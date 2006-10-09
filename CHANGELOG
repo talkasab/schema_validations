@@ -1,3 +1,7 @@
+[REVISION 20061020]
+
+[FIXED] Breaks abstract class inheritance. If classes are named 'AbstractXxx' they will be treated as abstract. This is somewhat of a work-around for the current implementation however I believe it is a sensible choice for now.
+
 [REVISION 20060924]
 
 [FIXED] validates_uniqueness_of causes new records to fail when nullable column is null and there exists another record where the value of the column is also null. NULL values should always be considered unique.
