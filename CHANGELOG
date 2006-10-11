@@ -1,3 +1,7 @@
+[REVISION 20061011]
+
+[CHANGED] Use include rather than extend in init.rb as this is more general. Plugin code can then determine if it needs to use extend or not.
+
 [REVISION 20061020]
 
 [FIXED] Breaks abstract class inheritance. If classes are named 'AbstractXxx' they will be treated as abstract. This is somewhat of a work-around for the current implementation however I believe it is a sensible choice for now.
