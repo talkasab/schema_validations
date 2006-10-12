@@ -1,3 +1,7 @@
+[REVISION 20061013]
+
+[NEW] install.rb informs user of missing dependencies.
+
 [REVISION 20061012]
 
 [CHANGED] Only read meta-data for base-classes.
