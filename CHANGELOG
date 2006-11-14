@@ -1,3 +1,7 @@
+[REVISION 20061114]
+
+[FIXED] NOT NULL columns with a default not marked as required for update.
+
 [REVISION 20061013]
 
 [NEW] install.rb informs user of missing dependencies.

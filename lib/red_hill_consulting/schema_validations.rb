@@ -4,7 +4,7 @@ module RedHillConsulting
       def self.included(base)
         base.extend(ClassMethods)
       end
-      
+
       module ClassMethods
         def self.extended(base)
           class << base
@@ -15,13 +15,13 @@ module RedHillConsulting
 
         def belongs_to_with_schema_validations(association_id, options = {})
           belongs_to_without_schema_validations(association_id, options)
-        
+
           column = columns_hash[reflections[association_id.to_sym].primary_key_name.to_s]
 
           # NOT NULL constraints
           module_eval(
-            "validates_presence_of column.name, :if => lambda { |record| record.#{association_id}.nil? }"
-          ) if column.required
+            "validates_presence_of column.name, :on => :#{column.required_on}, :if => lambda { |record| record.#{association_id}.nil? }"
+          ) if column.required_on
 
           # UNIQUE constraints
           validates_uniqueness_of column.name, :scope => column.unique_scope, :allow_nil => true if column.unique
@@ -29,7 +29,7 @@ module RedHillConsulting
 
         def inherited(child)
           super
-          
+
           # Don't even bother if: the class is abstract; not a base class; or the table doesn't exist
           return if child.abstract_class? || !child.base_class? || child.name.blank? || !child.table_exists?
 
@@ -44,13 +44,13 @@ module RedHillConsulting
             end
 
             # NOT NULL constraints
-            if column.required
+            if column.required_on
               # Work-around for a "feature" of the way validates_presence_of handles boolean fields
               # See http://dev.rubyonrails.org/ticket/5090 and http://dev.rubyonrails.org/ticket/3334
               if column.type == :boolean
-                child.validates_inclusion_of column.name, :in => [true, false], :message => ActiveRecord::Errors.default_error_messages[:blank]
+                child.validates_inclusion_of column.name, :on => column.required_on, :in => [true, false], :message => ActiveRecord::Errors.default_error_messages[:blank]
               else
-                child.validates_presence_of column.name
+                child.validates_presence_of column.name, :on => column.required_on
               end
             end
 
