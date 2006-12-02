@@ -8,8 +8,7 @@ module RedHillConsulting
       module ClassMethods
         def self.extended(base)
           class << base
-            alias_method :belongs_to_without_schema_validations, :belongs_to unless method_defined?(:belongs_to_without_schema_validations)
-            alias_method :belongs_to, :belongs_to_with_schema_validations
+            alias_method_chain :belongs_to, :schema_validations
           end
         end
 
