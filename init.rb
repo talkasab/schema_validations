@@ -1,1 +1,1 @@
-ActiveRecord::Base.send(:include, RedHillConsulting::SchemaValidations::Base)
+ActiveRecord::Base.send(:include, RedHillConsulting::SchemaValidations::ActiveRecord::Base)

@@ -2,6 +2,8 @@
 
 [CHANGED] Use Rails 1.2 alias_method_chain.
 
+[CHANGED] Separate modules into individual files.
+
 [REVISION 20061114]
 
 [FIXED] NOT NULL columns with a default not marked as required for update.
