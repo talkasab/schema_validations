@@ -1,3 +1,9 @@
+[REVISION 20061203]
+
+[CHANGED] Lazily load meta-data during allocate/new rather than inherited.
+
+[FIXED] Explicit table name ignored.
+
 [REVISION 20061202]
 
 [CHANGED] Use Rails 1.2 alias_method_chain.
