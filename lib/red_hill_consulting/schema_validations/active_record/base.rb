@@ -37,7 +37,7 @@ module RedHillConsulting::SchemaValidations::ActiveRecord
         validates_uniqueness_of column.name, :scope => column.unique_scope, :allow_nil => true if column.unique
       end
 
-      private
+      protected
 
       @schema_validations_loaded = false
 
