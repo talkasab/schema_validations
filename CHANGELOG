@@ -1,3 +1,7 @@
+[REVISION 20070221]
+
+[NEW] Where possible, validates_uniqueness_of adds the :case_sensitivity option based on the presence of case-insensitive indexes.
+
 [REVISION 20061203]
 
 [CHANGED] Lazily load meta-data during allocate/new rather than inherited.

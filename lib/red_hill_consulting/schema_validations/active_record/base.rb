@@ -34,7 +34,7 @@ module RedHillConsulting::SchemaValidations::ActiveRecord
         ) if column.required_on
 
         # UNIQUE constraints
-        validates_uniqueness_of column.name, :scope => column.unique_scope, :allow_nil => true if column.unique
+        validates_uniqueness_of column.name, :scope => column.unique_scope, :allow_nil => true if column.unique?
       end
 
       protected
@@ -68,7 +68,7 @@ module RedHillConsulting::SchemaValidations::ActiveRecord
           end
 
           # UNIQUE constraints
-          validates_uniqueness_of column.name, :scope => column.unique_scope, :allow_nil => true if column.unique
+          validates_uniqueness_of column.name, :scope => column.unique_scope, :allow_nil => true, :case_sensitive => column.case_sensitive? if column.unique?
         end
       end
     end
