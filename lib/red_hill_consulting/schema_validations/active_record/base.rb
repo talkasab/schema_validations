@@ -39,8 +39,6 @@ module RedHillConsulting::SchemaValidations::ActiveRecord
 
       protected
 
-      @schema_validations_loaded = false
-
       def load_schema_validations
         # Don't bother if: it's already been loaded; the class is abstract; not a base class; or the table doesn't exist
         return if @schema_validations_loaded || abstract_class? || !base_class? || name.blank? || !table_exists?
