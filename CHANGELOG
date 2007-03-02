@@ -1,3 +1,9 @@
+[REVISION 20070302]
+
+[NEW] Validation may be limited to specific columns by calling schema_validations from within your model class, passing either a single column (:only => :name) or an array of columns (:except => [:isocode, :iddcode]).
+
+[CHANGED] Use symbols rather than strings when calling validation methods as this seems to be the "way of the future" :).
+
 [REVISION 20070224]
 
 [FIXED] Removed useless assignment of class variable.

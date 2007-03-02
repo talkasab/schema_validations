@@ -31,6 +31,19 @@ would result in:
 
   validates_uniqueness_of :name, :scope => [:country_id]
 
+Validation may be limited to specific columns by calling <code>schema_validations</code> from within
+your model class, passing either a single column:
+
+  class Country < ActiveRecord::Base
+    schema_validations :only => :name
+  end
+
+or an array of columns:
+
+  class Country < ActiveRecord::Base
+    schema_validations :except => [:isocode, :iddcode]
+  end
+
 === Dependencies
 
 * RedHill on Rails Core (redhillonrails_core).
