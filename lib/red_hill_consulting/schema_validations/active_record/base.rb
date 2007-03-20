@@ -13,6 +13,11 @@ module RedHillConsulting::SchemaValidations::ActiveRecord
         end
       end
 
+      def inherited(child)
+        load_schema_validations unless self == ActiveRecord::Base
+        super
+      end
+
       def schema_validations(options = {})
         column_names = []
         if options[:only]
