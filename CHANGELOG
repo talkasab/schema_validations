@@ -1,3 +1,7 @@
+[REVISION 20070321]
+
+[FIXED] Sub-class meta-data missing if loaded before super-class.
+
 [REVISION 20070302]
 
 [NEW] Validation may be limited to specific columns by calling schema_validations from within your model class, passing either a single column (:only => :name) or an array of columns (:except => [:isocode, :iddcode]).
