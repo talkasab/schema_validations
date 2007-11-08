@@ -1,7 +1,3 @@
-[REVISION 20071107]
-
-[NEW] Force loading of redhillonrails_core as the first step of initialisation.
-
 [REVISION 20070321]
 
 [FIXED] Sub-class meta-data missing if loaded before super-class.
