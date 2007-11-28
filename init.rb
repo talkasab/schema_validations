@@ -1,1 +1,1 @@
-ActiveRecord::Base.send(:include, RedHillConsulting::SchemaValidations::ActiveRecord::Base)
+require 'schema_validations' unless defined?(RedHillConsulting::SchemaValidations)

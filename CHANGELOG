@@ -1,3 +1,7 @@
+[REVISION 20071128]
+
+[FIXED] Workaround to ensure plugin is only ever loaded once.
+
 [REVISION 20070321]
 
 [FIXED] Sub-class meta-data missing if loaded before super-class.
