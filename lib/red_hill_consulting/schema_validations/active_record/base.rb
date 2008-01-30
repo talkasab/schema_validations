@@ -9,7 +9,6 @@ module RedHillConsulting::SchemaValidations::ActiveRecord
         class << base
           alias_method_chain :allocate, :schema_validations
           alias_method_chain :new, :schema_validations
-          alias_method_chain :belongs_to, :schema_validations
         end
       end
 
@@ -41,28 +40,19 @@ module RedHillConsulting::SchemaValidations::ActiveRecord
         new_without_schema_validations(*args, &block)
       end
 
-      def belongs_to_with_schema_validations(association_id, options = {})
-        belongs_to_without_schema_validations(association_id, options)
-        column = columns_hash[reflections[association_id.to_sym].primary_key_name.to_s]
-
-        return unless validates?(column)
-
-        # NOT NULL constraints
-        module_eval(
-          "validates_presence_of :#{column.name}, :on => :#{column.required_on}, :if => lambda { |record| record.#{association_id}.nil? }"
-        ) if column.required_on
-
-        # UNIQUE constraints
-        validates_uniqueness_of column.name.to_sym, :scope => column.unique_scope.map(&:to_sym), :allow_nil => true if column.unique?
-      end
-
       protected
 
       def load_schema_validations
         # Don't bother if: it's already been loaded; the class is abstract; not a base class; or the table doesn't exist
         return if @schema_validations_loaded || abstract_class? || !base_class? || name.blank? || !table_exists?
         @schema_validations_loaded = true
+        load_column_validations
+        load_association_validations
+      end
 
+      private
+      
+      def load_column_validations
         content_columns.each do |column|
           next unless validates?(column)
 
@@ -92,8 +82,22 @@ module RedHillConsulting::SchemaValidations::ActiveRecord
           validates_uniqueness_of name, :scope => column.unique_scope.map(&:to_sym), :allow_nil => true, :case_sensitive => column.case_sensitive? if column.unique?
         end
       end
+      
+      def load_association_validations
+        columns = columns_hash
+        reflect_on_all_associations(:belongs_to).each do |association|
+          column = columns[association.primary_key_name]
+          next unless validates?(column)
 
-      private
+          # NOT NULL constraints
+          module_eval(
+            "validates_presence_of :#{column.name}, :on => :#{column.required_on}, :if => lambda { |record| record.#{association.name}.nil? }"
+          ) if column.required_on
+
+          # UNIQUE constraints
+          validates_uniqueness_of column.name.to_sym, :scope => column.unique_scope.map(&:to_sym), :allow_nil => true if column.unique?
+        end
+      end
 
       def validates?(column)
         column.name !~ /^(((created|updated)_(at|on))|position)$/ &&

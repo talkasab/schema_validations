@@ -1,3 +1,7 @@
+[REVISION 20080131]
+
+[FIXED] belongs_to associations failing when no table exists.
+
 [REVISION 20071128]
 
 [FIXED] Workaround to ensure plugin is only ever loaded once.
