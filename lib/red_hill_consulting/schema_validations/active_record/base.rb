@@ -35,9 +35,9 @@ module RedHillConsulting::SchemaValidations::ActiveRecord
         allocate_without_schema_validations
       end
 
-      def new_with_schema_validations(*args, &block)
+      def new_with_schema_validations(*args)
         load_schema_validations
-        new_without_schema_validations(*args, &block)
+        new_without_schema_validations(*args) { |*block_args| yield(*block_args) if block_given? }
       end
 
       protected
